@@ -1,0 +1,18 @@
+server:
+  port: ${PORT:9999}
+spring:
+  jpa:    database: MYSQL
+    show-sql: true
+    hibernate:      ddl-auto: update
+  datasource:    driver-class-name: com.mysql.jdbc.Driver
+    url: jdbc:mysql://localhost/danmer2
+    username: root
+    password:
+eureka:  client:    service-url:      defaultZone: http://localhost:8761/eureka
+    register-with-eureka: true
+security:  oauth2:    resource:      filter-order: 3
+    client:      client-id: admin
+      client-secret: prueba1
+      authorized-grant-types: password
+      scope: read,write          
+    
